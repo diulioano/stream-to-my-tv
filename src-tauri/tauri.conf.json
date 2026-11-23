@@ -1,0 +1,45 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Stream to My TV",
+  "version": "1.0.0",
+  "identifier": "tv.streamtomy.desktop",
+  "build": {
+    "beforeDevCommand": "npx --yes pnpm --dir ../frontend dev",
+    "devUrl": "http://localhost:5173",
+    "beforeBuildCommand": "npx --yes pnpm --dir ../frontend build",
+    "frontendDist": "../frontend/dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Stream to My TV",
+        "width": 1280,
+        "height": 820,
+        "minWidth": 960,
+        "minHeight": 640,
+        "resizable": true,
+        "center": true
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.png",
+      "icons/icon.ico"
+    ],
+    "externalBin": [
+      "binaries/stream-to-my-tv-sea",
+      "binaries/ffmpeg",
+      "binaries/ffprobe"
+    ],
+    "resources": {
+      "resources/server-bundle.cjs": "resources/server-bundle.cjs"
+    }
+  }
+}

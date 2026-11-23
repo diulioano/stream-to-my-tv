@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1d1c1a"/>
+      <stop offset="55%" stop-color="#151412"/>
+      <stop offset="100%" stop-color="#100f0e"/>
+    </linearGradient>
+    <radialGradient id="spotGlow" cx="50%" cy="46%" r="54%">
+      <stop offset="0%" stop-color="#315d54" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#162e2b" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#100f0e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warmHalo" cx="50%" cy="48%" r="42%">
+      <stop offset="0%" stop-color="#fac782" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#fac782" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rimGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff4da" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#3e3a34" stop-opacity="0.65"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#fff4da"/>
+      <stop offset="50%" stop-color="#e7dfd0"/>
+      <stop offset="100%" stop-color="#b5aa97"/>
+    </linearGradient>
+    <linearGradient id="limbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ded7c9"/>
+      <stop offset="100%" stop-color="#8c8374"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="15%" y1="0%" x2="85%" y2="100%">
+      <stop offset="0%" stop-color="#102421"/>
+      <stop offset="55%" stop-color="#1a3b35"/>
+      <stop offset="100%" stop-color="#2a534b"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff4da"/>
+      <stop offset="35%" stop-color="#fac782"/>
+      <stop offset="100%" stop-color="#efa564"/>
+    </linearGradient>
+    <linearGradient id="waveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fac782"/>
+      <stop offset="100%" stop-color="#efa564"/>
+    </linearGradient>
+    <filter id="softShadow" x="-15%" y="-15%" width="130%" height="135%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#050504" flood-opacity="0.65"/>
+    </filter>
+    <filter id="eyeGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="screenClip">
+      <rect x="128" y="182" width="256" height="176" rx="34"/>
+    </clipPath>
+    <clipPath id="clapClip">
+      <rect x="364" y="294" width="76" height="60" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- Cinema Obsidian Squircle Base -->
+  <rect x="16" y="16" width="480" height="480" rx="112" fill="url(#bgGrad)"/>
+  <rect x="18" y="18" width="476" height="476" rx="110" fill="none" stroke="url(#rimGrad)" stroke-width="4"/>
+
+  <!-- Cinema Studio Spotlight + Gold Halo -->
+  <circle cx="256" cy="240" r="215" fill="url(#spotGlow)"/>
+  <circle cx="256" cy="248" r="175" fill="url(#warmHalo)"/>
+
+  <!-- Ground Shadow under Mascot -->
+  <ellipse cx="256" cy="432" rx="118" ry="18" fill="#050504" opacity="0.65"/>
+
+  <!-- Cast / Broadcast Signal Arcs radiating from Antenna -->
+  <g fill="none" stroke="url(#waveGrad)" stroke-linecap="round" opacity="0.92">
+    <path d="M 218 76 A 54 54 0 0 1 294 76" stroke-width="10"/>
+    <path d="M 192 52 A 92 92 0 0 1 320 52" stroke-width="10" opacity="0.72"/>
+  </g>
+
+  <!-- Rabbit-Ear Antennas -->
+  <g stroke="#ded7c9" stroke-width="10" stroke-linecap="round" filter="url(#softShadow)">
+    <path d="M 222 154 L 182 96"/>
+    <path d="M 290 154 L 330 96"/>
+  </g>
+  <circle cx="180" cy="94" r="14" fill="url(#goldGrad)"/>
+  <circle cx="176" cy="90" r="4.5" fill="#fff4da"/>
+  <circle cx="332" cy="94" r="14" fill="url(#goldGrad)"/>
+  <circle cx="328" cy="90" r="4.5" fill="#fff4da"/>
+
+  <!-- Cute Stubby Legs / Feet -->
+  <g filter="url(#softShadow)">
+    <rect x="176" y="372" width="44" height="48" rx="22" fill="url(#limbGrad)"/>
+    <ellipse cx="192" cy="414" rx="30" ry="14" fill="url(#bodyGrad)"/>
+    <rect x="292" y="372" width="44" height="48" rx="22" fill="url(#limbGrad)"/>
+    <ellipse cx="320" cy="414" rx="30" ry="14" fill="url(#bodyGrad)"/>
+  </g>
+
+  <!-- Left Arm (Waving Cheerfully) -->
+  <g filter="url(#softShadow)">
+    <path d="M 106 276 C 72 266 56 238 66 212" fill="none" stroke="url(#limbGrad)" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="66" cy="206" r="18" fill="url(#bodyGrad)"/>
+  </g>
+
+  <!-- Right Arm (Holding Mini Clapperboard) -->
+  <g filter="url(#softShadow)">
+    <path d="M 406 286 C 430 294 440 314 426 330" fill="none" stroke="url(#limbGrad)" stroke-width="24" stroke-linecap="round"/>
+  </g>
+
+  <!-- Mascot Main TV Head / Body -->
+  <g filter="url(#softShadow)">
+    <rect x="102" y="152" width="308" height="236" rx="56" fill="url(#bodyGrad)"/>
+    <!-- Subtle Inner Rim -->
+    <rect x="105" y="155" width="302" height="230" rx="53" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="2.5"/>
+  </g>
+
+  <!-- Deep Cinema-Teal Screen Face -->
+  <rect x="128" y="182" width="256" height="176" rx="34" fill="url(#screenGrad)" stroke="#292724" stroke-width="6"/>
+
+  <!-- Subtle Film-Reel Rings & Gloss Reflection inside Screen -->
+  <g clip-path="url(#screenClip)">
+    <ellipse cx="220" cy="186" rx="145" ry="42" fill="#ffffff" opacity="0.06"/>
+    <circle cx="256" cy="270" r="96" fill="none" stroke="#a3c4ba" stroke-opacity="0.10" stroke-width="2"/>
+  </g>
+
+  <!-- Expressive Glowing Warm-Gold Eyes & Smile -->
+  <g filter="url(#eyeGlow)">
+    <!-- Left Eye -->
+    <ellipse cx="204" cy="256" rx="22" ry="28" fill="url(#goldGrad)"/>
+    <!-- Right Eye -->
+    <ellipse cx="308" cy="256" rx="22" ry="28" fill="url(#goldGrad)"/>
+    <!-- Cheerful Smile -->
+    <path d="M 236 298 Q 256 318 276 298" fill="none" stroke="#fac782" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <!-- Crisp Eye Specular Highlights -->
+  <circle cx="196" cy="244" r="7" fill="#fffdf7"/>
+  <circle cx="211" cy="264" r="3.5" fill="#fffdf7" opacity="0.8"/>
+  <circle cx="300" cy="244" r="7" fill="#fffdf7"/>
+  <circle cx="315" cy="264" r="3.5" fill="#fffdf7" opacity="0.8"/>
+
+  <!-- Cute Cheek Blush -->
+  <ellipse cx="166" cy="284" rx="14" ry="8" fill="#efa564" opacity="0.55"/>
+  <ellipse cx="346" cy="284" rx="14" ry="8" fill="#efa564" opacity="0.55"/>
+
+  <!-- Mini Cinema Clapperboard Held by Mascot -->
+  <g transform="rotate(-10 402 324)" filter="url(#softShadow)">
+    <rect x="364" y="294" width="76" height="60" rx="8" fill="#1d1c1a" stroke="#ded7c9" stroke-width="3"/>
+    <g clip-path="url(#clapClip)">
+      <rect x="364" y="294" width="76" height="16" fill="#292724"/>
+      <path d="M 366 310 L 378 294 L 390 294 L 378 310 Z" fill="#fac782"/>
+      <path d="M 392 310 L 404 294 L 416 294 L 404 310 Z" fill="#fac782"/>
+      <path d="M 418 310 L 430 294 L 442 294 L 430 310 Z" fill="#fac782"/>
+    </g>
+    <!-- Mini Play Icon on Clapperboard -->
+    <path d="M 395 322 L 415 332 L 395 342 Z" fill="#fff4da"/>
+  </g>
+
+  <!-- Right Hand Holding the Clapperboard -->
+  <circle cx="426" cy="332" r="17" fill="url(#bodyGrad)"/>
+</svg>
